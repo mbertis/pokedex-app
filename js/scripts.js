@@ -7,8 +7,8 @@ let pokemonList = [
 
 for (let i = 0; i < pokemonList.length; i++) {
     if(pokemonList[i].height > 5) {
-        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ ' - Wow, that\'s a tall Pokemon!' + '<br>');
+        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ ' - Wow, that\'s a tall Pokemon!' + '<br>'); //If Pokemon's height is more than 5', they will be have additional text next to name
     } else {
-        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ '<br>');
+        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ '<br>'); //If Pokemon's height is less than 5', just name and height are listed
     }
 }
