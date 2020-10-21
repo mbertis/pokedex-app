@@ -1,5 +1,10 @@
+:root {
+  --background-color: #d3d3d3;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: var(--background-color);
 }
 
 .pokedex__header--item {
