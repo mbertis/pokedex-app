@@ -4,3 +4,7 @@ let pokemonList = [
     {name: 'Torterra', height: 7, type: ['grass', 'ground']},
     {name: 'Morgrem', height: 2, type: ['dark', 'fairy']}
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') ');
+}
