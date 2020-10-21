@@ -1,3 +1,10 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+.pokedex__header--item {
+  display: block;
+  width: 10%;
+  margin: auto;
+  text-align: center;
+}
