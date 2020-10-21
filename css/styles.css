@@ -12,6 +12,7 @@ body {
   font-size: var(--primary-font-size);
   font-weight: var(--primary-font-weight);
   line-height: 1.6;
+  text-align: center;
 }
 
 .pokedex__header--item {
