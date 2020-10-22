@@ -1,14 +1,42 @@
 let pokemonList = [
-    {name: 'Bulbasaur', height: 2, type: ['grass', 'poison']},
-    {name: 'Charizard', height: 5, type: ['fire', 'flying']},
-    {name: 'Torterra', height: 7, type: ['grass', 'ground']},
-    {name: 'Morgrem', height: 2, type: ['dark', 'fairy']}
+  { name: "Bulbasaur", height: 2, type: ["grass", "poison"] },
+  { name: "Charizard", height: 5, type: ["fire", "flying"] },
+  { name: "Torterra", height: 7, type: ["water", "ground"] },
+  { name: "Morgrem", height: 2, type: ["dark", "fairy"] },
 ];
 
 for (let i = 0; i < pokemonList.length; i++) {
-    if(pokemonList[i].height > 5) {
-        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ ' - Wow, that\'s a tall Pokemon!' + '<br>'); //If Pokemon's height is more than 5', they will be have additional text next to name
-    } else {
-        document.write(pokemonList[i].name + ' ' + '(height: ' + pokemonList[i].height + '\') '+ '<br>'); //If Pokemon's height is less than 5', just name and height are listed
-    }
+  let size = "";
+  if (pokemonList[i].height > 6) {
+    size = "That is a big Pokemon!";
+  } else if (pokemonList[i].height < 3) {
+    size = "That is a small Pokemon";
+  } else {
+    size = "That is an average Pokemon";
+  }
+  let color = "";
+  for (let k = 0; k < pokemonList[i].type.length; k++){
+      if(pokemonList[i].type[k] == "water"){
+          color = '<span style = "color: blue;">'
+      } else if(pokemonList[i].type[k] == "fire"){
+          color = '<span style = "color: red;">'
+      } else if(pokemonList[i].type[k] == "grass"){
+          color = '<span style = "color: green;">'
+      } else if(pokemonList[i].type[k] == "dark"){
+          color = '<span style = "color: pink;">'
+      }
+  }
+  document.write(
+      '<div class = "box">' +
+    pokemonList[i].name +
+      " (height: " +
+      pokemonList[i].height +
+      ")" +
+      size +
+      color +
+      "<br>" +
+      pokemonList[i].type +
+      "<br>" +
+      '</div>'
+  );
 }
