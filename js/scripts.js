@@ -23,7 +23,7 @@ for (let i = 0; i < pokemonList.length; i++) {
       } else if(pokemonList[i].type[k] == "grass"){
           color = '<span style = "color: green;">'
       } else if(pokemonList[i].type[k] == "dark"){
-          color = '<span style = "color: pink;">'
+          color = '<span style = "color: purple;">'
       }
   }
   document.write(
