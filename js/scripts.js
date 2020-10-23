@@ -8,11 +8,11 @@ let pokemonList = [
 for (let i = 0; i < pokemonList.length; i++) {
   let size = "";
   if (pokemonList[i].height > 6) {
-    size = "That is a big Pokemon!";
+    size = " This is a big Pokemon!";
   } else if (pokemonList[i].height < 3) {
-    size = "That is a small Pokemon";
+    size = " This is a small Pokemon!";
   } else {
-    size = "That is an average Pokemon";
+    size = " This is an average Pokemon!";
   }
   let color = "";
   for (let k = 0; k < pokemonList[i].type.length; k++){
