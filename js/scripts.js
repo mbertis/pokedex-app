@@ -1,12 +1,10 @@
-let pokemonList = [
+let pokemonRepository = (function() {
+  let pokemonList = [
   { name: "Bulbasaur", height: 2, type: ["grass", "poison"] },
   { name: "Charizard", height: 5, type: ["fire", "flying"] },
   { name: "Torterra", height: 7, type: ["water", "ground"] },
   { name: "Morgrem", height: 2, type: ["dark", "fairy"] },
-];
-
-let pokemonRepository = (function() {
-  let pokemonList = [];
+  ];
 
   return {
     add: function(pokemon) {
@@ -18,7 +16,7 @@ let pokemonRepository = (function() {
   }
 }) ();
 
-pokemonList.forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
   let size = "";
   if (pokemon.height > 6) {
     size = " This is a big Pokemon!";
