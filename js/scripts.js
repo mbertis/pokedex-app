@@ -14,18 +14,7 @@ pokemonList.forEach(function(pokemon) {
   } else {
     size = " This is an average Pokemon!";
   }
-  let color = "";
-  for (let k = 0; k < pokemon.type.length; k++){
-      if(pokemon.type[k] == "water"){
-          color = '<span style = "color: blue;">'
-      } else if(pokemon.type[k] == "fire"){
-          color = '<span style = "color: red;">'
-      } else if(pokemon.type[k] == "grass"){
-          color = '<span style = "color: green;">'
-      } else if(pokemon.type[k] == "dark"){
-          color = '<span style = "color: purple;">'
-      }
-  }
+  
   document.write(
       '<div class = "box">' +
     pokemon.name +
@@ -33,9 +22,6 @@ pokemonList.forEach(function(pokemon) {
       pokemon.height +
       ")" +
       size +
-      color +
-      "<br>" +
-      pokemon.type +
       "<br>" +
       '</div>'
   );
