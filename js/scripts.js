@@ -5,6 +5,19 @@ let pokemonList = [
   { name: "Morgrem", height: 2, type: ["dark", "fairy"] },
 ];
 
+let pokemonRepository = (function() {
+  let pokemonList = [];
+
+  return {
+    add: function(pokemon) {
+      return pokemonList.push(pokemon);
+    },
+    getAll: function() {
+      return pokemonList;
+    }
+  }
+}) ();
+
 pokemonList.forEach(function(pokemon) {
   let size = "";
   if (pokemon.height > 6) {
