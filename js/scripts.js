@@ -5,38 +5,38 @@ let pokemonList = [
   { name: "Morgrem", height: 2, type: ["dark", "fairy"] },
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
+pokemonList.forEach(function(pokemon) {
   let size = "";
-  if (pokemonList[i].height > 6) {
+  if (pokemon.height > 6) {
     size = " This is a big Pokemon!";
-  } else if (pokemonList[i].height < 3) {
+  } else if (pokemon.height < 3) {
     size = " This is a small Pokemon!";
   } else {
     size = " This is an average Pokemon!";
   }
   let color = "";
-  for (let k = 0; k < pokemonList[i].type.length; k++){
-      if(pokemonList[i].type[k] == "water"){
+  for (let k = 0; k < pokemon.type.length; k++){
+      if(pokemon.type[k] == "water"){
           color = '<span style = "color: blue;">'
-      } else if(pokemonList[i].type[k] == "fire"){
+      } else if(pokemon.type[k] == "fire"){
           color = '<span style = "color: red;">'
-      } else if(pokemonList[i].type[k] == "grass"){
+      } else if(pokemon.type[k] == "grass"){
           color = '<span style = "color: green;">'
-      } else if(pokemonList[i].type[k] == "dark"){
+      } else if(pokemon.type[k] == "dark"){
           color = '<span style = "color: purple;">'
       }
   }
   document.write(
       '<div class = "box">' +
-    pokemonList[i].name +
+    pokemon.name +
       " (height: " +
-      pokemonList[i].height +
+      pokemon.height +
       ")" +
       size +
       color +
       "<br>" +
-      pokemonList[i].type +
+      pokemon.type +
       "<br>" +
       '</div>'
   );
-}
+});
