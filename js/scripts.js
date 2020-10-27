@@ -18,6 +18,7 @@ let pokemonRepository = (function() {
 
 pokemonRepository.getAll().forEach(function(pokemon) {
   let size = "";
+  let list = document.querySelector('.pokemon-list');
   if (pokemon.height > 6) {
     size = " This is a big Pokemon!";
   } else if (pokemon.height < 3) {
@@ -25,15 +26,5 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   } else {
     size = " This is an average Pokemon!";
   }
-  
-  document.write(
-      '<div class = "box">' +
-    pokemon.name +
-      " (height: " +
-      pokemon.height +
-      ")" +
-      size +
-      "<br>" +
-      '</div>'
   );
 });
