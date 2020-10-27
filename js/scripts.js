@@ -19,12 +19,8 @@ let pokemonRepository = (function() {
 pokemonRepository.getAll().forEach(function(pokemon) {
   let size = "";
   let list = document.querySelector('.pokemon-list');
-  if (pokemon.height > 6) {
-    size = " This is a big Pokemon!";
-  } else if (pokemon.height < 3) {
-    size = " This is a small Pokemon!";
-  } else {
-    size = " This is an average Pokemon!";
-  }
-  );
-});
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = "pokemonList.name";
+  button.classList.add('pokemon-button');
+  });

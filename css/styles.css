@@ -37,3 +37,7 @@ h1 {
   margin: auto;
   text-align: center;
 }
+
+.pokemon-button {
+  border: 5px #8b008b solid;
+}
