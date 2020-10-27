@@ -1,5 +1,5 @@
 let pokemonRepository = (function() {
-  let pokemonList = [
+  let repository = [
   { name: "Bulbasaur", height: 2, type: ["grass", "poison"] },
   { name: "Charizard", height: 5, type: ["fire", "flying"] },
   { name: "Torterra", height: 7, type: ["water", "ground"] },
@@ -8,21 +8,23 @@ let pokemonRepository = (function() {
 
   return {
     add: function(pokemon) {
-      return pokemonList.push(pokemon);
+      return repository.push(pokemon);
     },
     getAll: function() {
-      return pokemonList;
+      return repository;
+    },
+    addListItem: function(pokemon){
+      return 
     }
   }
 }) ();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  let size = "";
-  let list = document.querySelector('.pokemon-list');
+  let pokemonList = document.querySelector('.pokemon-list');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
   button.innerText = pokemon.name;
   button.classList.add('pokemon-button');
   listItem.appendChild(button);
-  pokemon-list.appendChild(listItem);
+  pokemonList.appendChild(listItem);
   });
