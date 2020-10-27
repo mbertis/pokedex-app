@@ -14,17 +14,17 @@ let pokemonRepository = (function() {
       return repository;
     },
     addListItem: function(pokemon){
-      return 
-    }
+      let pokemonList = document.querySelector('.pokemon-list');
+      let listItem = document.createElement('li');
+      let button = document.createElement('button');
+      button.innerText = pokemon.name;
+      button.classList.add('pokemon-button');
+      listItem.appendChild(button);
+      pokemonList.appendChild(listItem);
+      }
   }
 }) ();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  let pokemonList = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('pokemon-button');
-  listItem.appendChild(button);
-  pokemonList.appendChild(listItem);
+  pokemonRepository.addListItem(pokemon);
   });
