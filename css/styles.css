@@ -56,3 +56,7 @@ h1 {
 .pokemon-button:hover {
   opacity: 0.5;
 }
+
+.pokemon-list {
+  list-style-type: none;
+}

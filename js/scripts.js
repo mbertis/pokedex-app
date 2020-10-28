@@ -13,7 +13,7 @@ let pokemonRepository = (function() {
     getAll: function() {
       return repository;
     },
-    addListItem: function(pokemon){
+    addListItem: function(pokemon) {
       let pokemonList = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
       let button = document.createElement('button');
