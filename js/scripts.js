@@ -6,17 +6,16 @@ let pokemonRepository = (function() {
   { name: "Morgrem", height: 2, type: ["dark", "fairy"] },
   ];
 
-  return {
-    add: function(pokemon) {
+    function add(pokemon) {
       return repository.push(pokemon);
-    },
-    getAll: function() {
+    };
+    function getAll() {
       return repository;
-    },
-    showDetails: function(pokemon) {
+    };
+    function showDetails(pokemon) {
       console.log(pokemon);
-    },
-    addListItem: function(pokemon) {
+    };
+    function addListItem(pokemon) {
       let pokemonList = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
       let button = document.createElement('button');
@@ -25,10 +24,15 @@ let pokemonRepository = (function() {
       listItem.appendChild(button);
       pokemonList.appendChild(listItem);
       button.addEventListener('click', function() {
-        console.log(pokemon);
+        showDetails(pokemon);
       });
-      },
-  }
+      }; 
+      return {
+        add: add,
+        getAll: getAll,
+        showDetails: showDetails,
+        addListItem: addListItem
+      };
 }) ();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
