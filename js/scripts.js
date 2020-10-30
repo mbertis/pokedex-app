@@ -63,13 +63,14 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-  
+
   return {
     add: add,
     getAll: getAll,
     showDetails: showDetails,
     addListItem: addListItem,
     loadList: loadList,
+    loadDetails: loadDetails,
   };
 })();
 
