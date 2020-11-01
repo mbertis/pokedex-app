@@ -38,6 +38,10 @@ let pokemonRepository = (function () {
   document.querySelector('pokemon-button').addEventListener('click', () => {
     showModal(pokemon.name, pokemon.height);
   });
+  
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
@@ -100,7 +104,8 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showModal: showModal
+    showModal: showModal,
+    hideModal: hideModal
   };
 })();
 
