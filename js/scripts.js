@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
        let closeButtonElement = document.createElement('button');
        closeButtonElement.classList.add('modal-close');
        closeButtonElement.innerText = "Close";
-       closeButtonElement.addEventListener("click", hideModal);
+       closeButtonElement.addEventListener("click", hideModal); // will allow modal to be closed by clicking on 'close' button
 
        let titleElement = document.createElement('h1');
        titleElement.innerText = pokemon.name;
@@ -37,9 +37,22 @@ let pokemonRepository = (function () {
      });
    }
 
-  function hideModal(pokemon) {
+  function hideModal() {
     modalContainer.classList.remove("is-visible");
   }
+
+  modalContainer.addEventListener("click", (e) => { // allows modal to be closed if user clicks outside of modal
+    let target = e.target;
+    if(target === modalContainer) {
+      hideModal();
+    }
+  });
+
+  window.addEventListener("click", (e) => { // allows modal to be closed if user presses escape key
+    if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+      hideModal();
+    }
+  });
 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
