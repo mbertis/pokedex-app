@@ -26,7 +26,7 @@ let pokemonRepository = (function () {
        titleElement.innerText = pokemon.name;
 
        let contentElement = document.createElement('p');
-       contentElement.innerText = pokemon.height;
+       contentElement.innerText = "Height: " + pokemon.height;
 
        modal.appendChild(closeButtonElement);
        modal.appendChild(titleElement);
@@ -48,7 +48,7 @@ let pokemonRepository = (function () {
     }
   });
 
-  window.addEventListener("click", (e) => { // allows modal to be closed if user presses escape key
+  window.addEventListener("keydown", (e) => { // allows modal to be closed if user presses escape key
     if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
       hideModal();
     }
@@ -109,7 +109,7 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    //hideModal: hideModal
+    hideModal: hideModal
   };
 })();
 
