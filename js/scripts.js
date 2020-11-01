@@ -31,7 +31,13 @@ let pokemonRepository = (function () {
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
   }
+
+  document.querySelector('pokemon-button').addEventListener('click', () => {
+    showModal(pokemon.name, pokemon.height);
+  });
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
