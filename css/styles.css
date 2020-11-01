@@ -1,5 +1,5 @@
 :root {
-  --background-color: #d3d3d3;
+  --background-color: #faebd7;
   --primary-font-weight: 400;
   --primary-font-size: 16px;
   --large-font-weight: 800;
@@ -39,8 +39,8 @@ h1 {
 } */
 
 .pokemon-button {
-  border: 5px #8b008b solid;
-  background-color: #ffe4e1;
+  border: 5px #5f9ea0 solid;
+  background-color: #f0f8ff;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
