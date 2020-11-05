@@ -38,6 +38,8 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("btn-outline-info");
+    button.setAttribute("data-toggle", "modal"); // essentially acts as an event listener with bootstrap
+    button.setAttribute("data-target", "#pokemonModal"); // looks for id of pokemonModal
     listItem.appendChild(button);
     listItem.classList.add("group-list-item");
     pokemonList.appendChild(listItem);
