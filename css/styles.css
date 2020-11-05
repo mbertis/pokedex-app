@@ -110,3 +110,10 @@ h1 {
 .modal p {
   margin-bottom: 20px;
 }
+
+.btn-outline-info {
+  margin: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  border: 3px #5f9ea0 solid;
+}
