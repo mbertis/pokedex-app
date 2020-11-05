@@ -13,6 +13,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
+    
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
     
@@ -91,7 +92,8 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listItem);
     button.addEventListener("click", function () {
       showDetails(pokemon); // this will allow the modal to be displayed when pokemon button is clicked
-  }
+  });
+}
 
   function loadList() {
     return fetch(apiUrl)
