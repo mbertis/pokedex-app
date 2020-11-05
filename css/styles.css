@@ -3,7 +3,7 @@
   --primary-font-weight: 400;
   --primary-font-size: 16px;
   --large-font-weight: 800;
-  --large-font-size: 40px;
+  --large-font-size: 50px;
 }
 
 body {
@@ -13,6 +13,7 @@ body {
   font-weight: var(--primary-font-weight);
   line-height: 1.6;
   text-align: center;
+  margin-top: 80px;
 }
 
 .pokedex__header--item {
@@ -35,6 +36,7 @@ h1 {
   border-radius: 20px;
   padding: 10px;
   border: 3px #5f9ea0 solid;
+  width: 450px;
 }
 
 .btn-secondary {
@@ -43,4 +45,8 @@ h1 {
 
 .modal {
   color: #5f9ea0;
+}
+
+.navImage {
+  margin: 10px;
 }
