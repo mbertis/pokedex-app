@@ -25,9 +25,12 @@ let pokemonRepository = (function () {
 
       let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
 
+      let typeElement = $("<p>" + "Type(s): " + pokemon.types + "</p>");
+
       modalTitle.append(nameElement);
       modalBody.append(imageElement);
       modalBody.append(heightElement);
+      modalBody.append(typeElement);
     });
   }
 
@@ -76,7 +79,10 @@ let pokemonRepository = (function () {
       .then(function (details) {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-        item.types = details.types;
+        item.types = [];
+        details.types.forEach(function (typeItem) {
+          item.types.push(typeItem.type.name);
+        });
       })
       .catch(function (e) {
         console.error(e);
