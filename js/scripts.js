@@ -41,6 +41,7 @@ let pokemonRepository = (function () {
     button.setAttribute("data-target", "#pokemonModal"); // looks for id of pokemonModal
     listItem.appendChild(button);
     listItem.classList.add("group-list-item");
+    listItem.classList.add("list");
     pokemonList.appendChild(listItem);
     button.addEventListener("click", function () {
       showDetails(pokemon); // this will allow the modal to be displayed when pokemon button is clicked
@@ -104,13 +105,13 @@ function search() {
   filter = input.value.toUpperCase();
   ul = document.getElementById("myUL");
   li = ul.querySelectorAll(".list");
-  for(i = 0; i < li.length; i++) {
+  for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("button")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
-      li[i].style.display = "No Pokemon Found";
+      li[i].style.display = "none";
     }
   }
 }
