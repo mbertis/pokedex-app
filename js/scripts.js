@@ -16,20 +16,48 @@ let pokemonRepository = (function () {
     });
   }
 
+  // function addListItem(pokemon) {
+  //   let pokemonList = document.querySelector(".pokemon-list");
+  //   let listItem = document.createElement("li");
+  //   let button = document.createElement("button");
+  //   button.innerText = pokemon.name;
+  //   button.classList.add("btn-outline-info");
+  //   button.setAttribute("data-toggle", "modal"); // essentially acts as an event listener with bootstrap
+  //   button.setAttribute("data-target", "#pokemonModal"); // looks for id of pokemonModal
+  //   listItem.appendChild(button);
+  //   listItem.classList.add("group-list-item");
+  //   listItem.classList.add("list");
+  //   pokemonList.appendChild(listItem);
+  //   button.addEventListener("click", function () {
+  //     showDetails(pokemon); // this will allow the modal to be displayed when pokemon button is clicked
+  //   });
+  // }
+
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
-    let listItem = document.createElement("li");
-    let button = document.createElement("button");
-    button.innerText = pokemon.name;
-    button.classList.add("btn-outline-info");
-    button.setAttribute("data-toggle", "modal"); // essentially acts as an event listener with bootstrap
-    button.setAttribute("data-target", "#pokemonModal"); // looks for id of pokemonModal
-    listItem.appendChild(button);
-    listItem.classList.add("group-list-item");
-    listItem.classList.add("list");
-    pokemonList.appendChild(listItem);
-    button.addEventListener("click", function () {
-      showDetails(pokemon); // this will allow the modal to be displayed when pokemon button is clicked
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      let row = $(".row");
+
+      let card = $('<div class="card" style="width:400px"></div>');
+      let image = $(
+        '<img class="card-img-top" alt="Card image" style="width:20%" />'
+      );
+      image.attr("src", pokemon.imageUrl);
+      let cardBody = $('<div class="card-body"></div>');
+      let cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
+      let seeProfile = $(
+        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pokemonModal">See Profile</button>'
+      );
+
+      row.append(card);
+      //Append the image to each card
+      card.append(image);
+      card.append(cardBody);
+      cardBody.append(cardTitle);
+      cardBody.append(seeProfile);
+
+      seeProfile.on("click", function (event) {
+        showDetails(pokemon);
+      });
     });
   }
 
@@ -43,6 +71,7 @@ let pokemonRepository = (function () {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
+            image: item.imageUrl
           };
           add(pokemon);
         });
