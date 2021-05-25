@@ -16,36 +16,21 @@ let pokemonRepository = (function () {
     });
   }
 
-  // function addListItem(pokemon) {
-  //   let pokemonList = document.querySelector(".pokemon-list");
-  //   let listItem = document.createElement("li");
-  //   let button = document.createElement("button");
-  //   button.innerText = pokemon.name;
-  //   button.classList.add("btn-outline-info");
-  //   button.setAttribute("data-toggle", "modal"); // essentially acts as an event listener with bootstrap
-  //   button.setAttribute("data-target", "#pokemonModal"); // looks for id of pokemonModal
-  //   listItem.appendChild(button);
-  //   listItem.classList.add("group-list-item");
-  //   listItem.classList.add("list");
-  //   pokemonList.appendChild(listItem);
-  //   button.addEventListener("click", function () {
-  //     showDetails(pokemon); // this will allow the modal to be displayed when pokemon button is clicked
-  //   });
-  // }
-
   function addListItem(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       let row = $(".row");
 
-      let card = $('<div class="card" style="width:400px"></div>');
+      let card = $(
+        '<div class="card bg-dark text-white" style="width:300px; margin: 5px;"></div>'
+      );
       let image = $(
-        '<img class="card-img-top" alt="Card image" style="width:20%" />'
+        '<img class="card-img-top" alt="Card image" style="width:35%; margin-left: 30%;" />'
       );
       image.attr("src", pokemon.imageUrl);
       let cardBody = $('<div class="card-body"></div>');
       let cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
       let seeProfile = $(
-        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pokemonModal">See Profile</button>'
+        '<button type="button" class="btn btn-info" data-toggle="modal" data-target="#pokemonModal">See Profile</button>'
       );
 
       row.append(card);
@@ -71,7 +56,7 @@ let pokemonRepository = (function () {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
-            image: item.imageUrl
+            image: item.imageUrl,
           };
           add(pokemon);
         });
@@ -143,13 +128,14 @@ pokemonRepository.loadList().then(function () {
 });
 
 function search() {
-  let input, filter, ul, li, a, i, txtValue;
+  var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   ul = document.getElementById("myUL");
-  li = ul.querySelectorAll(".list");
+  li = ul.querySelectorAll(".card");
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("button")[0];
+    a = li[i].querySelector(".card-body").querySelector(".card-title");
+    console.log(a.innerText);
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
